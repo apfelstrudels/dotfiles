@@ -19,6 +19,8 @@
       InitialKeyRepeat = 15;  # short delay before repeat
       _HIHideMenuBar = true;  # auto-hide the menu bar
       AppleShowAllExtensions = true;
+      # true = Natural scrolling | false = Traditional scrolling
+      "com.apple.swipescrolldirection" = true;
     };
     dock.autohide = true;
     finder.FXPreferredViewStyle = "Nlsv";  # list view by default
@@ -28,18 +30,31 @@
   nix-homebrew = {
     enable = true;
     inherit user;
+    autoMigrate = true;
   };
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";  # remove anything not listed here
     onActivation.autoUpdate = true;
     onActivation.extraFlags = [ "--force" ];
+    taps = [ 
+      "clojure/tools"
+      "hashicorp/tap"
+      ];
     brews = [
       "herdr"
+      "autoconf"
+      "clojure/tools/clojure"
+      "rlwrap"
+      "opencode"
+      "pi-coding-agent"
     ];
     casks = [
+      "temurin@25"
       "wezterm"
+      "amethyst"
       "claude-code"
+      "codex"
     ];
   };
 }

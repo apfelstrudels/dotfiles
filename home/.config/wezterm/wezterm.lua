@@ -3,6 +3,13 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.color_scheme = "rose-pine-moon"
+config.colors = {
+    -- the foreground color of selected text
+  selection_fg = 'black',
+  -- the background color of selected text
+  selection_bg = '#fffacd',
+
+}
 config.font = wezterm.font("Hack Nerd Font")
 config.font_size = 15.0
 config.window_background_opacity = 0.8

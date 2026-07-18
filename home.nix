@@ -14,10 +14,29 @@ in
     fd        # fast find
     fzf       # fuzzy finder
     jq        # json on the command line
+    yq
+    git
+    curl
+    wget
+    fastfetch
+    killall
+    mtr
     lazygit
+    pnpm
+    tree
+    gh
+    bun
+    rustup
+    zip
+    unzip
     neovim
     # the font everything renders in
     nerd-fonts.hack
+    roboto
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    font-awesome
   ];
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
