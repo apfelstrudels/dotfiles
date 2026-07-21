@@ -34,6 +34,7 @@ elif [ "$FLAKE_USER" != "$REAL_USER" ]; then
   read -r -p "    Rewrite flake.nix's \"user = \" line to \"$REAL_USER\"? [y/N] " REPLY
   if [ "$REPLY" = "y" ] || [ "$REPLY" = "Y" ]; then
     sed -i '' -E "s/^([[:space:]]*user = \")[^\"]+(\";.*)/\1${REAL_USER}\2/" "$DIR/flake.nix"
+    sed -i '' "s/${FLAKE_USER}/${REAL_USER}/" "home/.claude/settings.json"
     echo "    Updated. Review the change with: git diff flake.nix"
   else
     echo "    Skipped. Edit the single \"user = \" line in flake.nix yourself before continuing."
@@ -55,7 +56,7 @@ echo "==> Step 4: first darwin-rebuild switch (pinned to nix-darwin-26.05)"
 NIX_BIN="$(command -v nix)"
 # "mac" is the flake host label - if you renamed it, change it in flake.nix
 # and rebuild.sh too.
-sudo "$NIX_BIN" run github:nix-darwin/nix-darwin/nix-darwin-26.05#darwin-rebuild -- \
+sudo -H "$NIX_BIN" run github:nix-darwin/nix-darwin/nix-darwin-26.05#darwin-rebuild -- \
   switch --flake ~/.dotfiles#mac
 # If this still fails with "nix: command not found", open a new terminal
 # (Determinate adds nix to new shells' PATH) and re-run ./bootstrap.sh.

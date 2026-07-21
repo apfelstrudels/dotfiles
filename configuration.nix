@@ -17,10 +17,10 @@
       AppleInterfaceStyle = "Dark";
       KeyRepeat = 2;          # fast key repeat
       InitialKeyRepeat = 15;  # short delay before repeat
-      _HIHideMenuBar = true;  # auto-hide the menu bar
+      _HIHideMenuBar = false;  # auto-hide the menu bar
       AppleShowAllExtensions = true;
       # true = Natural scrolling | false = Traditional scrolling
-      "com.apple.swipescrolldirection" = true;
+      "com.apple.swipescrolldirection" = false;
     };
     dock.autohide = true;
     finder.FXPreferredViewStyle = "Nlsv";  # list view by default
