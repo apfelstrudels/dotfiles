@@ -40,6 +40,7 @@
     taps = [ 
       "clojure/tools"
       "hashicorp/tap"
+      "kunchenguid/tap"
       ];
     brews = [
       "herdr"
@@ -48,6 +49,7 @@
       "rlwrap"
       "opencode"
       "pi-coding-agent"
+      "nono"
     ];
     casks = [
       "temurin@25"
@@ -55,6 +57,8 @@
       "amethyst"
       "claude-code"
       "codex"
+      "kunchenguid/tap/baby-menu"
+      "utm"
     ];
   };
 }
