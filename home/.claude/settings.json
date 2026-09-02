@@ -4,12 +4,42 @@
       {
         "hooks": [
           {
-            "command": "bash '/Users/clausspacil/.claude/hooks/herdr-agent-state.sh' session",
+            "command": "bash '/Users/spacilc/.claude/hooks/herdr-agent-state.sh' session",
             "timeout": 10,
             "type": "command"
           }
         ],
         "matcher": "*"
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "gh-axi",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "chrome-devtools-axi",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "lavish-axi",
+            "timeout": 10
+          }
+        ]
       }
     ]
   },
