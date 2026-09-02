@@ -53,7 +53,7 @@ in
       if [[ -n "$WEZTERM_PANE" ]]; then
         # Erzwinge das Neuladen der devenv-Umgebung in neuen WezTerm/Herdr Panes
         unset DIRENV_DIR DIRENV_WATCHES DIRENV_DIFF
-        eval "$(direnv hook zsh)"
+        eval "$(devenv hook zsh)"
       fi
 
       # Falls du devenv direkt als Hook geladen hast:
