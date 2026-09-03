@@ -50,6 +50,8 @@
       "opencode"
       "pi-coding-agent"
       "nono"
+      "node"
+      "tmux"
     ];
     casks = [
       "temurin@25"
