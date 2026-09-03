@@ -37,6 +37,7 @@ in
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
     font-awesome
+    devenv
   ];
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
@@ -47,7 +48,21 @@ in
     syntaxHighlighting.enable = true;  # commands turn green when valid
     initContent = ''
       bindkey '^f' autosuggest-accept
+      
+      # Falls du direnv nutzt:
+      if [[ -n "$WEZTERM_PANE" ]]; then
+        # Erzwinge das Neuladen der devenv-Umgebung in neuen WezTerm/Herdr Panes
+        unset DIRENV_DIR DIRENV_WATCHES DIRENV_DIFF
+        eval "$(devenv hook zsh)"
+      fi
+
+      # Falls du devenv direkt als Hook geladen hast:
+      if type devenv &>/dev/null; then
+        # Verhindert das "Vererben" eines defekten Shell-Status innerhalb von herdr
+        unset DEVENV_DOTFILE
+      fi
     '';
+    
     shellAliases = {
       ".." = "cd ..";
       add = "git add .";

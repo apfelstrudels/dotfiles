@@ -4,7 +4,7 @@
       {
         "hooks": [
           {
-            "command": "bash '/Users/clausspacil/.claude/hooks/herdr-agent-state.sh' session",
+            "command": "bash '/Users/spacilc/.claude/hooks/herdr-agent-state.sh' session",
             "timeout": 10,
             "type": "command"
           }
@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "lavish-axi",
+            "command": "chrome-devtools-axi",
             "timeout": 10
           }
         ]
@@ -36,7 +36,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "chrome-devtools-axi",
+            "command": "lavish-axi",
             "timeout": 10
           }
         ]
