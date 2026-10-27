@@ -50,6 +50,7 @@
       "opencode"
       "pi-coding-agent"
       "nono"
+      "lazygit"
     ];
     casks = [
       "temurin@25"
