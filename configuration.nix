@@ -51,6 +51,8 @@
       "pi-coding-agent"
       "nono"
       "lazygit"
+      "node"
+      "tmux"
     ];
     casks = [
       "temurin@25"
